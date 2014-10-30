@@ -103,6 +103,13 @@ print(a(5,6))
 ```
 
 ###*Currying*
+Currying é um conceito criado por Haskell Curry e que consiste em aninhar várias funções de alta ordem para formar uma função.
+Ex.:
+```python
+dividirPor = lambda x: lambda y: y/x
+div5 = dividirPor(5)
+div5(20) #retorna 4
+```
 
 ###Map, Filter, Reduce
 Funções para 
