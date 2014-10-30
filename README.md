@@ -94,7 +94,8 @@ print(foo(bar,4)) #retorna 16
 São funções que não tem nome. Geralmente são utilizadas para serem passadas como argumento para funções de alta ordem ou como resultado de uma.
 ```python
 lista = [1,2,3,4,5]
-novaLista = list(map(lambda n:n*n, lista)) #esta função recebe uma função como argumento e aplica ela para todos elementos da lista e retorna uma nova lista
+novaLista = list(map(lambda n:n*n, lista)) 
+#esta função recebe uma função como argumento e aplica ela para todos elementos da lista e retorna uma nova lista
 print(novaLista) #[1, 4, 9, 16, 25]
 
 a = lambda x,y:x*y
