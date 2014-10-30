@@ -60,27 +60,56 @@ f(4+5, loop): 	infinito	1.
 
 #ex6: Call by name
 f(4+5, loop)	(4+5)*(4+5)	1.
-				9*(4+5)		2.
-				9*9 		3.
-				81			4.
+			9*(4+5)     2.
+			9*9 		3.
+			81		4.
 ```
 
 No ex5, ele imediatamente avalia o segundo argumento da função, que é *loop*. Ao avaliar ele vai entrar em um *loop* infinito e nunca vai sair, nem mesmo vai retornar o valor na função. Já no ex6 como os argumentos são avaliados posteriormente ele não entra em um *loop* infinito, pois não é avaliado.
 
 
-
-###Funções de *n* Ordem
-
-
-
 ###Funções de *Alta* Ordem
+Linguagens funcionais tratam funções como valores de primeira classe, i.e., eles podem ser retornados por uma função ou passado como argumento. As Funções de Alta Ordem são todas as funções que recebem funções como parâmetro ou retornam funções como resposta. Um exemplo desse tipo de função é a derivada de cálculo, que recebe uma função e retorna uma outra função, isso permite uma maior flexibilidade na construção do programa, deixando a criação de funções muito mais dinâmica.
+Funções de primeira ordem recebem e retornam valores normais, como inteiros.
+
+```python
+#função que retorna uma função
+def dividirPor(x):
+      return lambda n:n/x
+
+dividirPorCinco = dividirPor(5)
+dividirPorCinco(50) #retorna 10
+
+#função que recebe uma função e retorna um valor normal
+def foo(x,a):
+      return x(a)
+
+def bar(a):
+      return a*a
+
+print(foo(bar,4)) #retorna 16
+```
+
+###Lambda ou Funções Anônimas
+São funções que não tem nome. Geralmente são utilizadas para serem passadas como argumento para funções de alta ordem ou como resultado de uma.
+```python
+lista = [1,2,3,4,5]
+novaLista = list(map(lambda n:n*n, lista)) #esta função recebe uma função como argumento e aplica ela para todos elementos da lista e retorna uma nova lista
+print(novaLista) #[1, 4, 9, 16, 25]
+
+a = lambda x,y:x*y
+print(a(5,6))
+
+```
+
+###*Currying*
+
+###Map, Filter, Reduce
+Funções para 
 
 
 
-###O conceito de *Currying*
 
 
-
-
-[1]: http://en.wikipedia.org/wiki/Lambda_calculusa
+[1]: http://en.wikipedia.org/wiki/Lambda_calculus
 
