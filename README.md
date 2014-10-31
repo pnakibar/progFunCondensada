@@ -10,15 +10,52 @@ Programação funcional tem as raízes no Cálculo Lambda[1]
 Mas chega de enrolação e vamos aos conceitos ;)
 
 
-###Recursão em calda
+###Recursão
+A recursão em calda é a solução funcional para o laço *while* e *for* da programação imperativa tradicional. A função se chama até atingir o resultado desejado e então retorna o valor.
 
+```python
+def fatorial(x):
+      if (x == 1):
+            return 1
+      else
+            return x * fatorial(x-1)
+```
+Obs.: Note que essa solução é um padrão para o loop e ele sempre vai seguir uma estrutura parecida com a da função fatorial.
+Porém a recursão em calda gasta uma grande quantidade de memória, e a solução para isso é:
 
-###Otimização da recursão em calda
+#####Otimização recursão em calda
+```python
+def fatorial(num):
+      def fatorialLoop(num, acumulador):
+            if (num == 1):
+                  return acumulador
+            else:
+                  return fatorialLoop(num-1,acumulador*num)
 
+      return fatorialLoop(num, 1)
+
+print(fatorial(4))
+```
+
+Algumas linguagens não aceitam essa otimização, como o Python, porem alguns dialetos de Lisp, como racket suportam.
+
+```lisp
+(define (fact x)
+  (if (= x 0) 1
+      (* x (fact (- x 1)))))
+
+(define (fact x)
+  (define (fact-tail x accum)
+    (if (= x 0) accum
+        (fact-tail (- x 1) (* x accum))))
+  (fact-tail x 1))
+```
 
 ###*Call by Value vs. Call by Name*
 
 *Call by Value* imediatamente avalia os parâmetros da função (i.e. resolve a função) e retorna o seu valor, ao contrário de *Call by Name* que deixa para avaliar os valores depois.
+
+
 
 Exemplo em uma função:
 ```python
@@ -113,7 +150,9 @@ div5(20) #retorna 4
 ```
 
 ###Map, Filter, Reduce
-Funções para 
+
+
+
 
 
 
