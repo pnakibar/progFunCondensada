@@ -147,6 +147,7 @@ Ex.:
 dividirPor = lambda x: lambda y: y/x
 div5 = dividirPor(5)
 div5(20) #retorna 4
+dividirPor(5)(20) #retorna 4
 ```
 
 ###Map, Filter, Reduce
