@@ -141,7 +141,7 @@ print(a(5,6))
 ```
 
 ###*Currying*
-Currying é um conceito criado por Haskell Curry e que consiste em aninhar várias funções de alta ordem para formar uma função.
+Currying é um conceito Introduzido por Moses Schönfinkel e depois desenvolvido por Haskell Curry e que consiste em aninhar várias funções de alta ordem para formar uma função.
 Ex.:
 ```python
 dividirPor = lambda x: lambda y: y/x
